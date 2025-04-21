@@ -6,58 +6,83 @@
   <meta name="description" content="Rajwinder GPT Rewards - Earn from surveys, apps, games & crypto offers. Convert Hunar Points to real cash.">
   <title>Rajwinder GPT Rewards</title>
   <style>
+    /* ==== Global Styles ==== */
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f5f7fa;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       color: #333;
     }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     header {
-      background: #4CAF50;
-      padding: 20px;
-      text-align: center;
-      color: white;
+      background: #4CAF50; padding: 20px;
+      text-align: center; color: white;
     }
-    section {
-      padding: 20px;
-    }
+    section { padding: 20px; }
     h2 {
       border-left: 5px solid #4CAF50;
-      padding-left: 10px;
-      margin-top: 40px;
+      padding-left: 10px; margin-top: 40px;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
+      gap: 15px; margin-top: 15px;
     }
     .card {
-      background: white;
-      padding: 15px;
+      background: white; padding: 15px;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-    .card:hover {
-      transform: scale(1.03);
-    }
+    .card:hover { transform: scale(1.03); }
     .btn {
-      display: inline-block;
-      margin-top: 10px;
+      display: inline-block; margin-top: 10px;
       padding: 8px 15px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+      background: #4CAF50; color: white;
+      text-decoration: none; border-radius: 5px;
     }
     footer {
-      text-align: center;
+      text-align: center; padding: 15px;
+      background: #222; color: white; margin-top: 40px;
+    }
+
+    /* ==== Earn by Surveys (New) ==== */
+    #survey-section .survey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .survey-box {
+      background: #fafafa; border: 1px solid #ddd;
+      border-radius: 6px; text-align: center;
       padding: 15px;
-      background: #222;
-      color: white;
-      margin-top: 40px;
+    }
+    .survey-box a {
+      font-weight: bold; color: #333;
+      text-decoration: none;
+    }
+
+    /* ==== Latest Referral Offers (New) ==== */
+    #referral-offers .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+      gap: 16px; margin-top: 15px;
+    }
+    .offer-card {
+      background: #fff; border: 1px solid #ddd;
+      border-radius: 8px; padding: 15px;
+      text-align: center;
+    }
+    .offer-card img {
+      max-width: 80px; margin-bottom: 10px;
+    }
+    .offer-card h3 {
+      margin: 8px 0;
+    }
+    .offer-card p {
+      margin: 4px 0; font-size: 0.9em;
     }
   </style>
 </head>
@@ -68,86 +93,188 @@
     <p>Earn Hunar Points from Tasks, Surveys, Games & Airdrops</p>
   </header>
 
-  <section>
-    <h2>How to Earn?</h2>
-    <div class="grid">
-      <div class="card"><strong>Play Games</strong><br>Earn points by completing game levels.</div>
-      <div class="card"><strong>Answer Surveys</strong><br>Get small rewards for simple answers.</div>
-      <div class="card"><strong>Use Referral Apps</strong><br>Download & earn from app rewards.</div>
-      <div class="card"><strong>Join Airdrops</strong><br>Participate in free crypto giveaways.</div>
-    </div>
-  </section>
+  <main>
 
-  <section>
-    <h2>Surveys & Rewards</h2>
-    <div class="grid">
-      <div class="card">
-        <strong>Q:</strong> What is ChatGPT?<br>
-        <strong>A:</strong> An AI developed by OpenAI.<br>
-        <span>+5 Hunar Points</span>
+    <!-- How to Earn? (Old) -->
+    <section>
+      <h2>How to Earn?</h2>
+      <div class="grid">
+        <div class="card"><strong>Play Games</strong><br>Earn points by completing game levels.</div>
+        <div class="card"><strong>Answer Surveys</strong><br>Get small rewards for simple answers.</div>
+        <div class="card"><strong>Use Referral Apps</strong><br>Download & earn from app rewards.</div>
+        <div class="card"><strong>Join Airdrops</strong><br>Participate in free crypto giveaways.</div>
       </div>
-      <div class="card">
-        <strong>Q:</strong> Best crypto wallet?<br>
-        <strong>A:</strong> Trust Wallet or MetaMask.<br>
-        <span>+4 Hunar Points</span>
-      </div>
-      <div class="card">
-        <strong>Q:</strong> What is airdrop in crypto?<br>
-        <strong>A:</strong> Free tokens given for promotion.<br>
-        <span>+6 Hunar Points</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Top Crypto Exchanges</h2>
-    <div class="grid">
-      <div class="card">
-        Binance<br>
-        <a href="https://binance.com" class="btn">Join & Earn</a>
+    <!-- Surveys & Rewards (Old) -->
+    <section>
+      <h2>Surveys & Rewards</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Q:</strong> What is ChatGPT?<br>
+          <strong>A:</strong> An AI developed by OpenAI.<br>
+          <span>+5 Hunar Points</span>
+        </div>
+        <div class="card">
+          <strong>Q:</strong> Best crypto wallet?<br>
+          <strong>A:</strong> Trust Wallet or MetaMask.<br>
+          <span>+4 Hunar Points</span>
+        </div>
+        <div class="card">
+          <strong>Q:</strong> What is airdrop in crypto?<br>
+          <strong>A:</strong> Free tokens given for promotion.<br>
+          <span>+6 Hunar Points</span>
+        </div>
       </div>
-      <div class="card">
-        KuCoin<br>
-        <a href="https://kucoin.com" class="btn">Join & Earn</a>
-      </div>
-      <div class="card">
-        MEXC<br>
-        <a href="https://mexc.com" class="btn">Join & Earn</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Referral Apps</h2>
-    <div class="grid">
-      <div class="card">
-        Taskbucks<br>
-        <a href="#" class="btn">Refer & Earn</a>
+    <!-- Earn by Surveys (New Link-Redirect Section) -->
+    <section id="survey-section">
+      <h2>Earn by Surveys</h2>
+      <div class="survey-grid">
+        <!-- 12–15 boxes; जरूरत अनुसार बढ़ाएं -->
+        <div class="survey-box">
+          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
+            Answer & Win 20 Hunar Points
+          </a>
+        </div>
+        <div class="survey-box">
+          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
+            Confusing Question #2 – Click to Reveal
+          </a>
+        </div>
+        <div class="survey-box">
+          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
+            What Gets Wetter the More It Dries?
+          </a>
+        </div>
+        <!-- …और ऐसे और बॉक्स जोड़े… -->
+        <div class="survey-box">
+          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
+            Final Trick Question – Earn 25 Points
+          </a>
+        </div>
       </div>
-      <div class="card">
-        RozDhan<br>
-        <a href="#" class="btn">Install & Earn</a>
-      </div>
-      <div class="card">
-        Pocket Money<br>
-        <a href="#" class="btn">Invite Now</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Games & Tasks</h2>
-    <div class="grid">
-      <div class="card">
-        Puzzle Game<br>
-        <a href="#" class="btn">Play Now</a>
+    <!-- Top Crypto Exchanges (Old) -->
+    <section>
+      <h2>Top Crypto Exchanges</h2>
+      <div class="grid">
+        <div class="card">
+          Binance<br>
+          <a href="https://binance.com" class="btn">Join & Earn</a>
+        </div>
+        <div class="card">
+          KuCoin<br>
+          <a href="https://kucoin.com" class="btn">Join & Earn</a>
+        </div>
+        <div class="card">
+          MEXC<br>
+          <a href="https://mexc.com" class="btn">Join & Earn</a>
+        </div>
       </div>
-      <div class="card">
-        Quiz Challenge<br>
-        <a href="#" class="btn">Take Quiz</a>
+    </section>
+
+    <!-- Referral Apps (Old) -->
+    <section>
+      <h2>Referral Apps</h2>
+      <div class="grid">
+        <div class="card">
+          Taskbucks<br>
+          <a href="#" class="btn">Refer & Earn</a>
+        </div>
+        <div class="card">
+          RozDhan<br>
+          <a href="#" class="btn">Install & Earn</a>
+        </div>
+        <div class="card">
+          Pocket Money<br>
+          <a href="#" class="btn">Invite Now</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Latest Referral Offers (New) -->
+    <section id="referral-offers">
+      <h2>Latest Referral Offers</h2>
+      <div class="offers-grid">
+
+        <!-- Binance -->
+        <div class="offer-card">
+          <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_Z4TS7" target="_blank">
+            <img src="https://www.binance.com/resources/img/logo.png" alt="Binance" />
+            <h3>Binance</h3>
+          </a>
+          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
+          <p><strong>Rewards: 5×</strong></p>
+        </div>
+
+        <!-- Sun Crypto -->
+        <div class="offer-card">
+          <a href="https://join.suncrypto.in/705869/refer" target="_blank">
+            <img src="https://join.suncrypto.in/icon.png" alt="Sun Crypto" />
+            <h3>Sun Crypto</h3>
+          </a>
+          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
+        </div>
+
+        <!-- Angel One -->
+        <div class="offer-card">
+          <a href="https://angel-one.onelink.me/Wjgr/ptnjexz2" target="_blank">
+            <img src="https://angelone.in/assets/img/logo.png" alt="Angel One" />
+            <h3>Angel One</h3>
+          </a>
+          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
+          <p><strong>Rewards: 5×</strong></p>
+        </div>
+
+        <!-- BTC Mining -->
+        <div class="offer-card">
+          <a href="https://apps.apple.com/us/app/id6503180820" target="_blank">
+            <img src="https://bitcoin.minning.com/logo.png" alt="BTC Mining" />
+            <h3>BTC Mining</h3>
+          </a>
+          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
+        </div>
+
+        <!-- BTC Miner -->
+        <div class="offer-card">
+          <a href="https://cloudminecrypto.com/?invite_code=nAvN4JlgKGEkB7zW" target="_blank">
+            <img src="https://cloudminecrypto.com/logo.png" alt="BTC Miner" />
+            <h3>BTC Miner</h3>
+          </a>
+          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
+        </div>
+
+        <!-- Pi Network -->
+        <div class="offer-card">
+          <a href="https://minepi.com/raju6454" target="_blank">
+            <img src="https://minepi.com/assets/logo.png" alt="Pi Network" />
+            <h3>Pi Network</h3>
+          </a>
+          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Games & Tasks (Old) -->
+    <section>
+      <h2>Games & Tasks</h2>
+      <div class="grid">
+        <div class="card">
+          Puzzle Game<br>
+          <a href="#" class="btn">Play Now</a>
+        </div>
+        <div class="card">
+          Quiz Challenge<br>
+          <a href="#" class="btn">Take Quiz</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     &copy; 2025 Rajwinder GPT Rewards | Powered by Hunar Points System
