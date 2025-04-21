@@ -1,165 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rajwinder GPT Rewards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff0f5;
-    }
-    header {
-      background-color: #8B0000;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    nav {
-      background-color: #ffc0cb;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 10px;
-      text-decoration: none;
-      color: #8B0000;
-      font-weight: bold;
-      border: 1px solid #8B0000;
-      padding: 5px 10px;
-      border-radius: 10px;
-      background-color: #fff;
-    }
-    .section {
-      padding: 20px;
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-    }
-    .section h2 {
-      color: #8B0000;
-    }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .card {
-      background-color: #ffe4e1;
-      border: 1px solid #8B0000;
-      border-radius: 10px;
-      padding: 15px;
-      width: 300px;
-    }
-    .card a {
-      color: #8B0000;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      background-color: #8B0000;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-    .footer-links a {
-      color: white;
-      margin: 5px;
-      font-size: 14px;
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+<!-- Header with Hamburger Menu -->
+<style>
+  .header {
+    background-color: #800000;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+  }
 
-  <header>
-    <h1>Rajwinder GPT Rewards</h1>
-    <p>Earn from Airdrops | Games | Surveys | Referrals</p>
-  </header>
+  .menu-icon {
+    font-size: 25px;
+    cursor: pointer;
+  }
 
-  <nav>
-    <a href="#airdrops">Airdrops</a>
-    <a href="#games">Play Games</a>
-    <a href="#surveys">Answer Surveys</a>
-    <a href="#exchanges">Crypto Exchanges</a>
-    <a href="#apps">Referral Apps</a>
-  </nav>
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 100;
+  }
 
-  <div class="section" id="airdrops">
-    <h2>Airdrop Opportunities</h2>
-    <div class="card-container">
-      <div class="card">
-        <a href="https://labs.zetachain.com/get-zeta?ref=0x257c62F48725756Ab6672Da425102425749072D9" target="_blank">ZetaChain Faucet (Free ZETA)</a>
-        <p>Complete faucet and share your referral link to earn more.</p>
-      </div>
-    </div>
+  .dropdown a {
+    display: block;
+    padding: 12px 16px;
+    color: #800000;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .site-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
+
+<div class="header">
+  <div class="menu-icon" onclick="toggleDropdown()">&#9776;</div>
+  <div class="site-title">Rajwinder GPT Rewards</div>
+</div>
+
+<div class="dropdown" id="menuDropdown">
+  <a href="https://latesttech6454.blogspot.com/?m=1">Earn Fast</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">View Ads</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Offerwalls</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Faucets</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Payouts</a>
+</div>
+
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById('menuDropdown');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('menuDropdown');
+    if (!e.target.closest('.header') && !e.target.closest('.dropdown')) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
+<!-- Main Content Blocks -->
+<style>
+  .main-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 10px;
+    gap: 15px;
+  }
+
+  .box {
+    background-color: #f5f5f5;
+    border: 2px solid #800000;
+    padding: 15px;
+    width: 160px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+
+  .box:hover {
+    transform: scale(1.05);
+    background-color: #fff0f0;
+  }
+
+  .box a {
+    text-decoration: none;
+    color: #800000;
+    font-weight: bold;
+  }
+
+  .referral-section {
+    margin: 50px 20px;
+    text-align: center;
+  }
+
+  .referral-item {
+    background: #fff6f6;
+    border: 2px solid #800000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px auto;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+  }
+
+  .referral-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .referral-item a {
+    font-weight: bold;
+    color: #800000;
+    text-decoration: none;
+  }
+
+  .sub-links {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .sub-links a {
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 12px;
+    background: #ffeeee;
+    color: #800000;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+</style>
+
+<div class="main-boxes">
+  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Earn Points</a></div>
+  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Play Games</a></div>
+  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Survey Answers</a></div>
+  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Refer & Earn</a></div>
+  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">How to Claim</a></div>
+</div>
+
+<!-- Referral Apps -->
+<div class="referral-section">
+  <h3 style="color:#800000;">Top Referral Links</h3>
+
+  <div class="referral-item">
+    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance">
+    <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_Z4TS7" target="_blank">Join Binance</a>
   </div>
 
-  <div class="section" id="games">
-    <h2>Play & Earn Games</h2>
-    <div class="card-container">
-      <div class="card">
-        <a href="https://cloudminecrypto.com/?invite_code=nAvN4JlgKGEkB7zW" target="_blank">Bitcoin Mining Game</a>
-        <p>Earn BTC by playing and sleeping – bonus with referral!</p>
-      </div>
-      <div class="card">
-        <a href="https://apps.apple.com/us/app/id6503180820" target="_blank">BTC Game (App Store)</a>
-        <p>Download iOS BTC mining app and start earning now.</p>
-      </div>
-    </div>
-  </div>
-    <div class="section" id="surveys">
-    <h2>Answer Surveys</h2>
-    <div class="card-container">
-      <div class="card">
-        <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">Earn by Answering Simple Questions</a>
-        <p>Confusing but rewarding surveys. Try your luck!</p>
-      </div>
-    </div>
+  <div class="referral-item">
+    <img src="https://play-lh.googleusercontent.com/IEXqOfrphF7j7L3wnI4L3TRWpkM1QwaT9uArW68LfXwYqZvjzTRLMFZaAg=w240-h480-rw" alt="SunCrypto">
+    <a href="https://join.suncrypto.in/705869/refer" target="_blank">SunCrypto App</a>
   </div>
 
-  <div class="section" id="exchanges">
-    <h2>Top Crypto Exchange Referrals</h2>
-    <div class="card-container">
-      <div class="card">
-        <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_Z4TS7" target="_blank">Binance – Earn Together</a>
-        <p>Claim up to $2000. Sign up with referral link.</p>
-      </div>
-      <div class="card">
-        <a href="https://join.suncrypto.in/705869/refer" target="_blank">Sun Crypto – Get ₹100 BTC Free</a>
-        <p>Use referral code 705869. Trade easily in 350+ pairs.</p>
-      </div>
-      <div class="card">
-        <a href="https://angel-one.onelink.me/Wjgr/ptnjexz2" target="_blank">Angel One – Free Demat Account</a>
-        <p>₹0 Brokerage, 1L MTF @ 0% interest. Link valid 48 hrs.</p>
-      </div>
-    </div>
+  <div class="referral-item">
+    <img src="https://play-lh.googleusercontent.com/LP7k7JQNYn7EBKKh6cykYRMvnmzSBlWk-4HHNRLknwgl_qKkKREUHdKoehg=s256-rw" alt="AngelOne">
+    <a href="https://angel-one.onelink.me/Wjgr/ptnjexz2" target="_blank">Open Demat - AngelOne</a>
   </div>
 
-  <div class="section" id="apps">
-    <h2>Referral Apps</h2>
-    <div class="card-container">
-      <div class="card">
-        <a href="https://minepi.com/raju6454" target="_blank">Pi Network</a>
-        <p>Earn Pi using code <strong>raju6454</strong> – trusted by 55M+ users.</p>
-      </div>
-    </div>
+  <div class="referral-item">
+    <img src="https://play-lh.googleusercontent.com/z9Wc4jGhHJYI2FlY2WqqiHld5Z8qUXrml4VG9OiUp07bnH07Z5Ck_PZmeA=s256-rw" alt="BTC Miner">
+    <a href="https://cloudminecrypto.com/?invite_code=nAvN4JlgKGEkB7zW" target="_blank">BTC Miner App</a>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Rajwinder GPT Rewards</p>
-    <div class="footer-links">
-      <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">Earn from Airdrops</a> |
-      <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">Play Games</a> |
-      <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">Answer Surveys</a> |
-      <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">Referral Apps</a>
-    </div>
-  </footer>
+  <div class="referral-item">
+    <img src="https://minepi.com/assets/pi-icon.png" alt="Pi Network">
+    <a href="https://minepi.com/raju6454" target="_blank">Pi Network</a>
+  </div>
+</div>
 
-</body>
-</html>
+<!-- Sub-links under title -->
+<div class="sub-links">
+  <a href="https://latesttech6454.blogspot.com/?m=1">Earn from Airdrops</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Free Trading Contests</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Survey Rewards</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Referral Apps</a>
+  <a href="https://latesttech6454.blogspot.com/?m=1">Earn Crypto Free</a>
+</div>
