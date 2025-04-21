@@ -5,85 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Rajwinder GPT Rewards - Earn from surveys, apps, games & crypto offers. Convert Hunar Points to real cash.">
   <title>Rajwinder GPT Rewards</title>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
   <style>
-    /* ==== Global Styles ==== */
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f7fa;
-      margin: 0; padding: 0;
-      color: #333;
-    }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header {
-      background: #4CAF50; padding: 20px;
-      text-align: center; color: white;
-    }
-    section { padding: 20px; }
-    h2 {
-      border-left: 5px solid #4CAF50;
-      padding-left: 10px; margin-top: 40px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px; margin-top: 15px;
-    }
-    .card {
-      background: white; padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover { transform: scale(1.03); }
-    .btn {
-      display: inline-block; margin-top: 10px;
-      padding: 8px 15px;
-      background: #4CAF50; color: white;
-      text-decoration: none; border-radius: 5px;
-    }
-    footer {
-      text-align: center; padding: 15px;
-      background: #222; color: white; margin-top: 40px;
-    }
-
-    /* ==== Earn by Surveys (New) ==== */
-    #survey-section .survey-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
-      gap: 12px;
-      margin-top: 15px;
-    }
-    .survey-box {
-      background: #fafafa; border: 1px solid #ddd;
-      border-radius: 6px; text-align: center;
-      padding: 15px;
-    }
-    .survey-box a {
-      font-weight: bold; color: #333;
-      text-decoration: none;
-    }
-
-    /* ==== Latest Referral Offers (New) ==== */
-    #referral-offers .offers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-      gap: 16px; margin-top: 15px;
-    }
-    .offer-card {
-      background: #fff; border: 1px solid #ddd;
-      border-radius: 8px; padding: 15px;
-      text-align: center;
-    }
-    .offer-card img {
-      max-width: 80px; margin-bottom: 10px;
-    }
-    .offer-card h3 {
-      margin: 8px 0;
-    }
-    .offer-card p {
-      margin: 4px 0; font-size: 0.9em;
-    }
+    body { font-family: 'Segoe UI', sans-serif; background:#f5f7fa; margin:0; color:#333; }
+    header { background:#4CAF50; padding:20px; text-align:center; color:white; position:relative; }
+    #authBtn { position:absolute;top:20px;right:20px;padding:8px 12px;background:white;color:#4CAF50;border:none;border-radius:4px;cursor:pointer; }
+    section { padding:20px; }
+    h2 { border-left:5px solid #4CAF50; padding-left:10px; margin-top:40px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; margin-top:15px; }
+    .card { background:white; padding:15px; border-radius:10px; box-shadow:0 0 8px rgba(0,0,0,0.1); transition:transform .3s; text-align:center; }
+    .card:hover { transform:scale(1.03); }
+    .btn { display:inline-block; margin-top:10px; padding:8px 15px; background:#4CAF50; color:white; text-decoration:none; border-radius:5px; }
+    footer { text-align:center; padding:15px; background:#222; color:white; margin-top:40px; }
+    #loginModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; }
+    #loginModal .modal-content { background:#fff; padding:20px; border-radius:8px; width:300px; box-sizing:border-box; }
+    #loginModal input, #loginModal button { width:100%; margin:5px 0; padding:8px; box-sizing:border-box; border:none; border-radius:4px; cursor:pointer; }
+    #loginModal button { background:#4CAF50; color:white; }
   </style>
 </head>
 <body>
@@ -91,194 +33,251 @@
   <header>
     <h1>Rajwinder GPT Rewards</h1>
     <p>Earn Hunar Points from Tasks, Surveys, Games & Airdrops</p>
+    <button id="authBtn">Login</button>
   </header>
 
-  <main>
-
-    <!-- How to Earn? (Old) -->
-    <section>
-      <h2>How to Earn?</h2>
-      <div class="grid">
-        <div class="card"><strong>Play Games</strong><br>Earn points by completing game levels.</div>
-        <div class="card"><strong>Answer Surveys</strong><br>Get small rewards for simple answers.</div>
-        <div class="card"><strong>Use Referral Apps</strong><br>Download & earn from app rewards.</div>
-        <div class="card"><strong>Join Airdrops</strong><br>Participate in free crypto giveaways.</div>
+  <section>
+    <h2>How to Earn?</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="#" class="btn">Play Games</a><br>Earn points by completing game levels.
       </div>
-    </section>
-
-    <!-- Surveys & Rewards (Old) -->
-    <section>
-      <h2>Surveys & Rewards</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Q:</strong> What is ChatGPT?<br>
-          <strong>A:</strong> An AI developed by OpenAI.<br>
-          <span>+5 Hunar Points</span>
-        </div>
-        <div class="card">
-          <strong>Q:</strong> Best crypto wallet?<br>
-          <strong>A:</strong> Trust Wallet or MetaMask.<br>
-          <span>+4 Hunar Points</span>
-        </div>
-        <div class="card">
-          <strong>Q:</strong> What is airdrop in crypto?<br>
-          <strong>A:</strong> Free tokens given for promotion.<br>
-          <span>+6 Hunar Points</span>
-        </div>
+      <div class="card">
+        <a href="#" class="btn">Answer Surveys</a><br>Get small rewards for simple answers.
       </div>
-    </section>
-
-    <!-- Earn by Surveys (New Link-Redirect Section) -->
-    <section id="survey-section">
-      <h2>Earn by Surveys</h2>
-      <div class="survey-grid">
-        <!-- 12–15 boxes; जरूरत अनुसार बढ़ाएं -->
-        <div class="survey-box">
-          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
-            Answer & Win 20 Hunar Points
-          </a>
-        </div>
-        <div class="survey-box">
-          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
-            Confusing Question #2 – Click to Reveal
-          </a>
-        </div>
-        <div class="survey-box">
-          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
-            What Gets Wetter the More It Dries?
-          </a>
-        </div>
-        <!-- …और ऐसे और बॉक्स जोड़े… -->
-        <div class="survey-box">
-          <a href="https://latesttech6454.blogspot.com/?m=1" target="_blank">
-            Final Trick Question – Earn 25 Points
-          </a>
-        </div>
+      <div class="card">
+        <a href="https://your-app-link.com" class="btn">Use Referral Apps</a><br>Download & earn from app rewards.
       </div>
-    </section>
-
-    <!-- Top Crypto Exchanges (Old) -->
-    <section>
-      <h2>Top Crypto Exchanges</h2>
-      <div class="grid">
-        <div class="card">
-          Binance<br>
-          <a href="https://binance.com" class="btn">Join & Earn</a>
-        </div>
-        <div class="card">
-          KuCoin<br>
-          <a href="https://kucoin.com" class="btn">Join & Earn</a>
-        </div>
-        <div class="card">
-          MEXC<br>
-          <a href="https://mexc.com" class="btn">Join & Earn</a>
-        </div>
+      <div class="card">
+        <a href="#" class="btn">Join Airdrops</a><br>Participate in free crypto giveaways.
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Referral Apps (Old) -->
-    <section>
-      <h2>Referral Apps</h2>
-      <div class="grid">
-        <div class="card">
-          Taskbucks<br>
-          <a href="#" class="btn">Refer & Earn</a>
-        </div>
-        <div class="card">
-          RozDhan<br>
-          <a href="#" class="btn">Install & Earn</a>
-        </div>
-        <div class="card">
-          Pocket Money<br>
-          <a href="#" class="btn">Invite Now</a>
-        </div>
+  <section>
+    <h2>Surveys & Rewards</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Q:</strong> What is ChatGPT?<br>
+        <strong>A:</strong> An AI developed by OpenAI.<br>
+        <span>+5 Hunar Points</span>
       </div>
-    </section>
-
-    <!-- Latest Referral Offers (New) -->
-    <section id="referral-offers">
-      <h2>Latest Referral Offers</h2>
-      <div class="offers-grid">
-
-        <!-- Binance -->
-        <div class="offer-card">
-          <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_Z4TS7" target="_blank">
-            <img src="https://www.binance.com/resources/img/logo.png" alt="Binance" />
-            <h3>Binance</h3>
-          </a>
-          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
-          <p><strong>Rewards: 5×</strong></p>
-        </div>
-
-        <!-- Sun Crypto -->
-        <div class="offer-card">
-          <a href="https://join.suncrypto.in/705869/refer" target="_blank">
-            <img src="https://join.suncrypto.in/icon.png" alt="Sun Crypto" />
-            <h3>Sun Crypto</h3>
-          </a>
-          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
-        </div>
-
-        <!-- Angel One -->
-        <div class="offer-card">
-          <a href="https://angel-one.onelink.me/Wjgr/ptnjexz2" target="_blank">
-            <img src="https://angelone.in/assets/img/logo.png" alt="Angel One" />
-            <h3>Angel One</h3>
-          </a>
-          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
-          <p><strong>Rewards: 5×</strong></p>
-        </div>
-
-        <!-- BTC Mining -->
-        <div class="offer-card">
-          <a href="https://apps.apple.com/us/app/id6503180820" target="_blank">
-            <img src="https://bitcoin.minning.com/logo.png" alt="BTC Mining" />
-            <h3>BTC Mining</h3>
-          </a>
-          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
-        </div>
-
-        <!-- BTC Miner -->
-        <div class="offer-card">
-          <a href="https://cloudminecrypto.com/?invite_code=nAvN4JlgKGEkB7zW" target="_blank">
-            <img src="https://cloudminecrypto.com/logo.png" alt="BTC Miner" />
-            <h3>BTC Miner</h3>
-          </a>
-          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
-        </div>
-
-        <!-- Pi Network -->
-        <div class="offer-card">
-          <a href="https://minepi.com/raju6454" target="_blank">
-            <img src="https://minepi.com/assets/logo.png" alt="Pi Network" />
-            <h3>Pi Network</h3>
-          </a>
-          <p><strong>KYC ज़रूरी है – रजिस्टर करना अनिवार्य है rewards पाने के लिए.</strong></p>
-        </div>
-
+      <div class="card">
+        <strong>Q:</strong> Best crypto wallet?<br>
+        <strong>A:</strong> Trust Wallet or MetaMask.<br>
+        <span>+4 Hunar Points</span>
       </div>
-    </section>
-
-    <!-- Games & Tasks (Old) -->
-    <section>
-      <h2>Games & Tasks</h2>
-      <div class="grid">
-        <div class="card">
-          Puzzle Game<br>
-          <a href="#" class="btn">Play Now</a>
-        </div>
-        <div class="card">
-          Quiz Challenge<br>
-          <a href="#" class="btn">Take Quiz</a>
-        </div>
+      <div class="card">
+        <strong>Q:</strong> What is airdrop in crypto?<br>
+        <strong>A:</strong> Free tokens given for promotion.<br>
+        <span>+6 Hunar Points</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section>
+    <h2>Top Crypto Exchanges</h2>
+    <div class="grid">
+      <div class="card">
+        Binance<br>
+        <a href="https://binance.com/?ref=YOUR_BINANCE_REF" class="btn">Join & Earn</a>
+      </div>
+      <div class="card">
+        KuCoin<br>
+        <a href="https://kucoin.com/r/YOUR_KUCOIN_REF" class="btn">Join & Earn</a>
+      </div>
+      <div class="card">
+        MEXC<br>
+        <a href="https://mexc.com/?ref=YOUR_MEXC_REF" class="btn">Join & Earn</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Referral Apps</h2>
+    <div class="grid">
+      <div class="card">
+        Taskbucks<br>
+        <a href="https://taskbucks.your-referral.link" class="btn">Refer & Earn</a>
+      </div>
+      <div class="card">
+        RozDhan<br>
+        <a href="https://rozdhan.your-referral.link" class="btn">Install & Earn</a>
+      </div>
+      <div class="card">
+        Pocket Money<br>
+        <a href="https://pocketmoney.your-referral.link" class="btn">Invite Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Games & Tasks</h2>
+    <div class="grid">
+      <div class="card">
+        Puzzle Game<br>
+        <a href="https://your-puzzle-game.link" class="btn">Play Now</a>
+      </div>
+      <div class="card">
+        Quiz Challenge<br>
+        <a href="https://your-quiz-game.link" class="btn">Take Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaderboard -->
+  <section id="leaderboard"><h2>Leaderboard</h2></section>
+
+  <!-- Withdrawal Request -->
+  <section id="withdraw">
+    <h2>Request Withdrawal</h2>
+    <input id="wdAmount" type="number" placeholder="Amount in points"/>
+    <button onclick="requestWithdrawal(parseInt(document.getElementById('wdAmount').value))" class="btn">Withdraw</button>
+  </section>
+
+  <!-- Login Modal -->
+  <div id="loginModal">
+    <div class="modal-content">
+      <h3>Login / Sign Up</h3>
+      <input id="email" type="email" placeholder="Email"/>
+      <input id="password" type="password" placeholder="Password"/>
+      <button id="btnLogin">Login / Sign Up</button>
+      <button id="btnClose">Cancel</button>
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 Rajwinder GPT Rewards | Powered by Hunar Points System
   </footer>
+
+  <!-- Inline App Logic -->
+  <script>
+    // ====== Firebase Initialization ======
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      // baaki config…
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db   = firebase.firestore();
+
+    // ====== UI Elements ======
+    const loginModal = document.getElementById('loginModal');
+    const authBtn    = document.getElementById('authBtn');
+    const btnClose   = document.getElementById('btnClose');
+    const btnLogin   = document.getElementById('btnLogin');
+    const emailInput = document.getElementById('email');
+    const passInput  = document.getElementById('password');
+
+    // Show/Hide Modal
+    authBtn.addEventListener('click', () => loginModal.style.display = 'flex');
+    btnClose.addEventListener('click', () => loginModal.style.display = 'none');
+
+    // Login / Sign Up
+    btnLogin.addEventListener('click', () => {
+      const email = emailInput.value, pass = passInput.value;
+      auth.signInWithEmailAndPassword(email, pass)
+        .catch(err => {
+          if (err.code === 'auth/user-not-found') 
+            return auth.createUserWithEmailAndPassword(email, pass);
+          else alert(err.message);
+        })
+        .then(() => loginModal.style.display = 'none');
+    });
+
+    // Auth State Change
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        authBtn.textContent = 'Logout';
+        loadUserData(user.uid);
+      } else {
+        authBtn.textContent = 'Login';
+        document.getElementById('pointDisplay')?.remove();
+      }
+    });
+
+    // Load / Init User Data
+    function loadUserData(uid) {
+      const userRef = db.collection('users').doc(uid);
+      userRef.get().then(doc => {
+        if (!doc.exists) {
+          userRef.set({ points: 0, joined: Date.now() });
+          updatePointDisplay(0);
+        } else updatePointDisplay(doc.data().points);
+        loadLeaderboard();
+      });
+    }
+
+    // Update Point Display
+    function updatePointDisplay(points) {
+      let ptSpan = document.getElementById('pointDisplay');
+      if (!ptSpan) {
+        ptSpan = document.createElement('span');
+        ptSpan.id = 'pointDisplay';
+        ptSpan.style.cssText = 'position:absolute;top:20px;left:20px;font-weight:bold;';
+        document.body.appendChild(ptSpan);
+      }
+      ptSpan.textContent = `Hunar Points: ${points}`;
+    }
+
+    // Leaderboard
+    function loadLeaderboard() {
+      db.collection('users').orderBy('points','desc').limit(10).get()
+        .then(snapshot => {
+          const lb = document.getElementById('leaderboard');
+          lb.innerHTML = '<h2>Leaderboard</h2>';
+          snapshot.forEach(doc => {
+            const d = doc.data();
+            const div = document.createElement('div');
+            div.textContent = `${d.email||'User'}: ${d.points}`;
+            lb.appendChild(div);
+          });
+        });
+    }
+
+    // Withdrawal Request
+    function requestWithdrawal(amount) {
+      const user = auth.currentUser;
+      if (!user) { alert('Please login'); return; }
+      db.collection('withdrawals').add({
+        uid: user.uid, amount,
+        requestedAt: Date.now(),
+        status: 'pending'
+      }).then(() => alert('Withdrawal Requested'));
+    }
+
+    // Telegram Bot Sync
+    function notifyTelegram(message) {
+      const botToken = 'YOUR_BOT_TOKEN';
+      const chatId   = 'YOUR_CHAT_ID';
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: message })
+      });
+    }
+
+    // Add Points & Notify
+    function addPoints(pointsToAdd) {
+      const user = auth.currentUser;
+      if (!user) return;
+      const userRef = db.collection('users').doc(user.uid);
+      db.runTransaction(tx => {
+        return tx.get(userRef).then(doc => {
+          const newPts = (doc.data().points||0) + pointsToAdd;
+          tx.update(userRef, { points: newPts });
+          return newPts;
+        });
+      }).then(newPts => {
+        updatePointDisplay(newPts);
+        if (newPts % 50 === 0)
+          notifyTelegram(`User reached ${newPts} Hunar Points!`);
+        loadLeaderboard();
+      });
+    }
+  </script>
 
 </body>
 </html>
