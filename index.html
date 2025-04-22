@@ -1,176 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rajwinder GPT Rewards offers top CPA offers and airdrops. Earn crypto, rewards, and more with easy sign-ups and tasks.">
-    <meta name="keywords" content="CPA offers, airdrops, crypto, surveys, games, referral links, Rajwinder GPT Rewards">
-    <meta name="author" content="Rajwinder">
-    <title>Rajwinder GPT Rewards</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Rajwinder GPT Rewards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #111;
+      color: #fff;
+    }
+    .header {
+      background-color: #8B0000;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-icon {
+      font-size: 25px;
+      cursor: pointer;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: #222;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      border-radius: 6px;
+      z-index: 100;
+    }
+    .dropdown a {
+      display: block;
+      padding: 12px 16px;
+      color: #FFD700;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+    }
+    .dropdown a:hover {
+      background-color: #444;
+    }
+    .site-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .main-boxes, .country-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 10px;
+    }
+    .box, .country-box {
+      background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+      border: 2px solid #8B0000;
+      border-radius: 10px;
+      padding: 20px;
+      width: 160px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .box:hover, .country-box:hover {
+      transform: scale(1.05);
+      background: #333;
+    }
+    .box a, .country-box a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section-banner {
+      margin: 50px 20px 20px;
+      text-align: center;
+      background-color: #222;
+      padding: 15px;
+      border-left: 5px solid #FFD700;
+      font-size: 18px;
+      font-weight: bold;
+      color: #FFD700;
+    }
+    .referral-item {
+      background: #1f1f1f;
+      border: 2px solid #8B0000;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 15px auto;
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+    }
+    .referral-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+    .referral-item a {
+      color: #FFD700;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Rajwinder GPT Rewards">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#airdrops">Airdrops</a></li>
-                <li><a href="#cpa-offers">CPA Offers</a></li>
-                <li><a href="#games">Games</a></li>
-                <li><a href="#surveys">Surveys</a></li>
-                <li><a href="#crypto-exchanges">Crypto Exchanges</a></li>
-                <li><a href="#rewards">Rewards</a></li>
-                <li><a href="#referral-apps">Referral Apps</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="header">
+    <div class="menu-icon" onclick="toggleDropdown()">&#9776;</div>
+    <div class="site-title">Rajwinder GPT Rewards</div>
+  </div>
 
-    <section id="home">
-        <div class="hero">
-            <h1>Welcome to Rajwinder GPT Rewards</h1>
-            <p>Earn crypto, rewards, and more with our easy-to-complete tasks and sign-ups!</p>
-            <a href="#airdrops" class="btn">View Airdrops</a>
-        </div>
-    </section>
+  <div class="dropdown" id="menuDropdown">
+    <a href="https://latesttech6454.blogspot.com/?m=1">Earn Fast</a>
+    <a href="https://latesttech6454.blogspot.com/?m=1">View Ads</a>
+    <a href="https://latesttech6454.blogspot.com/?m=1">Offerwalls</a>
+    <a href="https://latesttech6454.blogspot.com/?m=1">Faucets</a>
+    <a href="https://latesttech6454.blogspot.com/?m=1">Payouts</a>
+  </div>
 
-    <section id="airdrops">
-        <h2>Current Airdrops</h2>
-        <div class="airdrop-list">
-            <div class="airdrop-item">
-                <h3>Airdrop Title 1</h3>
-                <p>Description of the airdrop, how to join, and how much you can earn.</p>
-                <a href="referral_link_1" class="btn">Claim Now</a>
-            </div>
-            <div class="airdrop-item">
-                <h3>Airdrop Title 2</h3>
-                <p>Description of the airdrop, how to join, and how much you can earn.</p>
-                <a href="referral_link_2" class="btn">Claim Now</a>
-            </div>
-        </div>
-    </section>
+  <script>
+    function toggleDropdown() {
+      const menu = document.getElementById('menuDropdown');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menuDropdown');
+      if (!e.target.closest('.header') && !e.target.closest('.dropdown')) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
 
-    <section id="cpa-offers">
-        <h2>CPA Offers (Country-wise)</h2>
-        <div class="cpa-offer-list">
-            <div class="cpa-offer">
-                <h3>USA CPA Offer</h3>
-                <p>Complete a task and earn rewards in the USA.</p>
-                <a href="usa_referral_link" class="btn">Claim Now</a>
-            </div>
-            <div class="cpa-offer">
-                <h3>India CPA Offer</h3>
-                <p>Complete a task and earn rewards in India.</p>
-                <a href="india_referral_link" class="btn">Claim Now</a>
-            </div>
-            <!-- More country-wise offers can be added here -->
-        </div>
-    </section>
+  <!-- Main Options -->
+  <div class="section-banner">Start Earning</div>
+  <div class="main-boxes">
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Earn Points</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Play Games</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Survey Answers</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Refer & Earn</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">How to Claim</a></div>
+  </div>
 
-    <section id="games">
-        <h2>Games</h2>
-        <div class="game-list">
-            <div class="game-item">
-                <h3>Game Title 1</h3>
-                <p>Description of the game, how to play, and how to earn rewards.</p>
-                <a href="game_link_1" class="btn">Play Now</a>
-            </div>
-            <div class="game-item">
-                <h3>Game Title 2</h3>
-                <p>Description of the game, how to play, and how to earn rewards.</p>
-                <a href="game_link_2" class="btn">Play Now</a>
-            </div>
-        </div>
-    </section>
+  <!-- Top Referral Apps -->
+  <div class="section-banner">Top Referral Apps</div>
+  <div class="referral-item">
+    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance">
+    <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_Z4TS7" target="_blank">Join Binance</a>
+  </div>
+  <div class="referral-item">
+    <img src="https://play-lh.googleusercontent.com/IEXqOfrphF7j7L3wnI4L3TRWpkM1QwaT9uArW68LfXwYqZvjzTRLMFZaAg=w240-h480-rw" alt="SunCrypto">
+    <a href="https://join.suncrypto.in/705869/refer" target="_blank">SunCrypto App</a>
+  </div>
+  <div class="referral-item">
+    <img src="https://play-lh.googleusercontent.com/LP7k7JQNYn7EBKKh6cykYRMvnmzSBlWk-4HHNRLknwgl_qKkKREUHdKoehg=s256-rw" alt="AngelOne">
+    <a href="https://angel-one.onelink.me/Wjgr/ptnjexz2" target="_blank">Open Demat - AngelOne</a>
+  </div>
 
-    <section id="surveys">
-        <h2>Surveys</h2>
-        <div class="survey-list">
-            <div class="survey-item">
-                <h3>Survey 1</h3>
-                <p>Complete this survey and earn rewards.</p>
-                <a href="survey_link_1" class="btn">Start Survey</a>
-            </div>
-            <div class="survey-item">
-                <h3>Survey 2</h3>
-                <p>Complete this survey and earn rewards.</p>
-                <a href="survey_link_2" class="btn">Start Survey</a>
-            </div>
-        </div>
-    </section>
+  <!-- CPA Offers by Country -->
+  <div class="section-banner">CPA Offers (Country Based)</div>
+  <div class="country-boxes">
+    <div class="country-box"><a href="#">USA Offers</a></div>
+    <div class="country-box"><a href="#">UK Tasks</a></div>
+    <div class="country-box"><a href="#">India Freebies</a></div>
+    <div class="country-box"><a href="#">Canada Offers</a></div>
+    <div class="country-box"><a href="#">Germany Rewards</a></div>
+    <div class="country-box"><a href="#">Philippines Deals</a></div>
+  </div>
 
-    <section id="crypto-exchanges">
-        <h2>Crypto Exchanges</h2>
-        <div class="crypto-exchange-list">
-            <div class="crypto-exchange-item">
-                <h3>Binance</h3>
-                <p>Sign up for Binance and get rewards.</p>
-                <a href="binance_referral_link" class="btn">Join Now</a>
-            </div>
-            <div class="crypto-exchange-item">
-                <h3>KuCoin</h3>
-                <p>Sign up for KuCoin and get rewards.</p>
-                <a href="kucoin_referral_link" class="btn">Join Now</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="rewards">
-        <h2>Rewards & Surveys</h2>
-        <div class="reward-blocks">
-            <div class="reward-item">
-                <h3>Survey Answer 1</h3>
-                <p>Complete this answer and earn a reward.</p>
-                <a href="survey_answer_link_1" class="btn">Complete Survey</a>
-            </div>
-            <div class="reward-item">
-                <h3>Survey Answer 2</h3>
-                <p>Complete this answer and earn a reward.</p>
-                <a href="survey_answer_link_2" class="btn">Complete Survey</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="referral-apps">
-        <h2>Referral Apps</h2>
-        <div class="referral-app-list">
-            <div class="referral-app-item">
-                <h3>App 1</h3>
-                <p>Sign up and earn rewards with this app.</p>
-                <a href="app_referral_link_1" class="btn">Join Now</a>
-            </div>
-            <div class="referral-app-item">
-                <h3>App 2</h3>
-                <p>Sign up and earn rewards with this app.</p>
-                <a href="app_referral_link_2" class="btn">Join Now</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us below:</p>
-        <form action="submit_form.php" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Rajwinder GPT Rewards | All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://twitter.com/rajwinder" target="_blank">Twitter</a>
-            <a href="https://telegram.me/rajwinder6454" target="_blank">Telegram</a>
-            <a href="https://github.com/rajwinderairdrops" target="_blank">GitHub</a>
-        </div>
-    </footer>
+  <!-- Extra Links -->
+  <div class="section-banner">More Earning Options</div>
+  <div class="main-boxes">
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Earn from Airdrops</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Free Trading Contests</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Survey Rewards</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Referral Apps</a></div>
+    <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Earn Crypto Free</a></div>
+  </div>
 
 </body>
 </html>
