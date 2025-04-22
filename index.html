@@ -1,200 +1,130 @@
-<!-- Header with Hamburger Menu -->
-<style>
-  .header {
-    background-color: #800000;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Arial, sans-serif;
-  }
-
-  .menu-icon {
-    font-size: 25px;
-    cursor: pointer;
-  }
-
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 55px;
-    left: 20px;
-    background-color: white;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    overflow: hidden;
-    z-index: 100;
-  }
-
-  .dropdown a {
-    display: block;
-    padding: 12px 16px;
-    color: #800000;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .dropdown a:hover {
-    background-color: #f0f0f0;
-  }
-
-  .site-title {
-    font-size: 20px;
-    font-weight: bold;
-  }
-</style>
-
-<div class="header">
-  <div class="menu-icon" onclick="toggleDropdown()">&#9776;</div>
-  <div class="site-title">Rajwinder GPT Rewards</div>
+<!-- Banner -->
+<div style="background: linear-gradient(to right, #800000, #ff9999); padding: 15px; text-align: center; color: white; font-weight: bold; font-size: 18px; font-family: sans-serif;">
+  Start Earning Instantly with High Paying Offers (USA & Canada)
 </div>
 
-<div class="dropdown" id="menuDropdown">
-  <a href="https://latesttech6454.blogspot.com/?m=1">Earn Fast</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">View Ads</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Offerwalls</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Faucets</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Payouts</a>
-</div>
+<!-- USA Offers Section -->
+<div style="margin: 40px 10px;">
+  <h2 style="color:#800000; text-align:center;">Top CPA Offers - USA</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+    
+    <div style="background:#fff0f5; border:2px solid #800000; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#800000;">$100 Walmart Card</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#d60000; font-weight:bold;">Claim Now</a>
+    </div>
+    
+    <div style="background:#f0fff0; border:2px solid #800000; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#006600;">iPhone 15 Giveaway</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#006600; font-weight:bold;">Participate</a>
+    </div>
 
-<script>
-  function toggleDropdown() {
-    const menu = document.getElementById('menuDropdown');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  }
+    <div style="background:#fff5ee; border:2px solid #800000; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#cc0000;">$750 Cash App Reward</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#cc0000; font-weight:bold;">Get Offer</a>
+    </div>
 
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
-    const menu = document.getElementById('menuDropdown');
-    if (!e.target.closest('.header') && !e.target.closest('.dropdown')) {
-      menu.style.display = 'none';
-    }
-  });
-</script>
-<!-- Main Content Blocks -->
-<style>
-  .main-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 30px 10px;
-    gap: 15px;
-  }
-
-  .box {
-    background-color: #f5f5f5;
-    border: 2px solid #800000;
-    padding: 15px;
-    width: 160px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-
-  .box:hover {
-    transform: scale(1.05);
-    background-color: #fff0f0;
-  }
-
-  .box a {
-    text-decoration: none;
-    color: #800000;
-    font-weight: bold;
-  }
-
-  .referral-section {
-    margin: 50px 20px;
-    text-align: center;
-  }
-
-  .referral-item {
-    background: #fff6f6;
-    border: 2px solid #800000;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 15px auto;
-    max-width: 300px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
-  }
-
-  .referral-item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-  }
-
-  .referral-item a {
-    font-weight: bold;
-    color: #800000;
-    text-decoration: none;
-  }
-
-  .sub-links {
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  .sub-links a {
-    display: inline-block;
-    margin: 5px;
-    padding: 6px 12px;
-    background: #ffeeee;
-    color: #800000;
-    font-size: 13px;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-</style>
-
-<div class="main-boxes">
-  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Earn Points</a></div>
-  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Play Games</a></div>
-  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Survey Answers</a></div>
-  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">Refer & Earn</a></div>
-  <div class="box"><a href="https://latesttech6454.blogspot.com/?m=1">How to Claim</a></div>
-</div>
-
-<!-- Referral Apps -->
-<div class="referral-section">
-  <h3 style="color:#800000;">Top Referral Links</h3>
-
-  <div class="referral-item">
-    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance">
-    <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_Z4TS7" target="_blank">Join Binance</a>
-  </div>
-
-  <div class="referral-item">
-    <img src="https://play-lh.googleusercontent.com/IEXqOfrphF7j7L3wnI4L3TRWpkM1QwaT9uArW68LfXwYqZvjzTRLMFZaAg=w240-h480-rw" alt="SunCrypto">
-    <a href="https://join.suncrypto.in/705869/refer" target="_blank">SunCrypto App</a>
-  </div>
-
-  <div class="referral-item">
-    <img src="https://play-lh.googleusercontent.com/LP7k7JQNYn7EBKKh6cykYRMvnmzSBlWk-4HHNRLknwgl_qKkKREUHdKoehg=s256-rw" alt="AngelOne">
-    <a href="https://angel-one.onelink.me/Wjgr/ptnjexz2" target="_blank">Open Demat - AngelOne</a>
-  </div>
-
-  <div class="referral-item">
-    <img src="https://play-lh.googleusercontent.com/z9Wc4jGhHJYI2FlY2WqqiHld5Z8qUXrml4VG9OiUp07bnH07Z5Ck_PZmeA=s256-rw" alt="BTC Miner">
-    <a href="https://cloudminecrypto.com/?invite_code=nAvN4JlgKGEkB7zW" target="_blank">BTC Miner App</a>
-  </div>
-
-  <div class="referral-item">
-    <img src="https://minepi.com/assets/pi-icon.png" alt="Pi Network">
-    <a href="https://minepi.com/raju6454" target="_blank">Pi Network</a>
   </div>
 </div>
 
-<!-- Sub-links under title -->
-<div class="sub-links">
-  <a href="https://latesttech6454.blogspot.com/?m=1">Earn from Airdrops</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Free Trading Contests</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Survey Rewards</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Referral Apps</a>
-  <a href="https://latesttech6454.blogspot.com/?m=1">Earn Crypto Free</a>
+<!-- Canada Offers Section -->
+<div style="margin: 40px 10px;">
+  <h2 style="color:#800000; text-align:center;">Top CPA Offers - Canada</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+    
+    <div style="background:#f0f8ff; border:2px solid #800000; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#000080;">$500 Amazon Gift</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#000080; font-weight:bold;">Grab Now</a>
+    </div>
+
+    <div style="background:#fdf5e6; border:2px solid #800000; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#8b0000;">Tim Hortons Gift Card</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#8b0000; font-weight:bold;">Get It</a>
+    </div>
+
+  </div>
+</div>
+<!-- Banner -->
+<div style="background: linear-gradient(to right, #003366, #99ccff); padding: 15px; text-align: center; color: white; font-weight: bold; font-size: 18px; font-family: sans-serif;">
+  Earn Big from UK, Australia & India Offers – Easy Payouts!
+</div>
+
+<!-- UK Offers Section -->
+<div style="margin: 40px 10px;">
+  <h2 style="color:#003366; text-align:center;">Top CPA Offers - UK</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+    
+    <div style="background:#e6f2ff; border:2px solid #003366; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#003366;">£100 Tesco Voucher</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#003366; font-weight:bold;">Claim Now</a>
+    </div>
+
+    <div style="background:#fffacd; border:2px solid #333300; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#666600;">Free PS5 Raffle</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#666600; font-weight:bold;">Participate</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Australia Offers Section -->
+<div style="margin: 40px 10px;">
+  <h2 style="color:#006666; text-align:center;">Top CPA Offers - Australia</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+
+    <div style="background:#f0fff0; border:2px solid #006666; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#006666;">$500 Coles Card</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#009999; font-weight:bold;">Grab Offer</a>
+    </div>
+
+    <div style="background:#ffe4e1; border:2px solid #cc3333; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#cc3333;">Get Free AirPods</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#cc0000; font-weight:bold;">Join Now</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- India Offers Section -->
+<div style="margin: 40px 10px;">
+  <h2 style="color:#800000; text-align:center;">Top CPA Offers - India</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+    
+    <div style="background:#fff5e6; border:2px solid #800000; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#800000;">Win ₹1000 Paytm</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#b22222; font-weight:bold;">Claim Now</a>
+    </div>
+
+    <div style="background:#f0f8ff; border:2px solid #191970; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#000080;">Free Flipkart Vouchers</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#000080; font-weight:bold;">Grab Offer</a>
+    </div>
+
+  </div>
+</div>
+<!-- Banner -->
+<div style="background: linear-gradient(to right, #ff7e5f, #feb47b); padding: 15px; text-align: center; color: white; font-weight: bold; font-size: 18px; font-family: sans-serif;">
+  🔥 Exclusive CPA Offers – Boost Your Earnings Today!
+</div>
+
+<!-- Additional CPA Offers Section -->
+<div style="margin: 40px 10px;">
+  <h2 style="color:#ff7e5f; text-align:center;">Top CPA Offers - Global</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+    
+    <div style="background:#fff0f5; border:2px solid #ff69b4; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#ff1493;">$50 Amazon Gift Card</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#ff1493; font-weight:bold;">Claim Now</a>
+    </div>
+
+    <div style="background:#f0fff0; border:2px solid #32cd32; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#228b22;">Free Netflix Subscription</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#228b22; font-weight:bold;">Get Offer</a>
+    </div>
+
+    <div style="background:#f5f5dc; border:2px solid #daa520; padding:15px; width:180px; border-radius:10px; text-align:center;">
+      <h3 style="color:#b8860b;">Win iPhone 14</h3>
+      <a href="YOUR_CPA_LINK_HERE" target="_blank" style="color:#b8860b; font-weight:bold;">Participate</a>
+    </div>
+
+  </div>
 </div>
